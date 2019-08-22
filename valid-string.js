@@ -26,13 +26,8 @@ const validString = line => {
       }
   ,{ result: {}, prev: '' })
 
-  if( Object.values(results.result).find(r => r > 2) ) {
-    console.log(false)
-    process.exit(0)
-  }
+  console.log( Object.values(results.result).find(r => r > 2) === undefined)
 }
 
 
 rl.on('line', validString)
-
-rl.on('close', () => console.log(true))
